@@ -1,0 +1,33 @@
+{
+  "lawyer": [
+    "select lawyer",
+    "Criminal Lawyer",
+    "Corporate Lawyer",
+    "Family Lawyer",
+    "Immigration Lawyer",
+    "Real Estate Lawyer",
+    "Intellectual Property Lawyer",
+    "Employment Lawyer",
+    "Personal Injury Lawyer",
+    "Bankruptcy Lawyer",
+    "Tax Lawyer",
+    "Environmental Lawyer",
+    "Health Care Lawyer",
+    "Entertainment Lawyer",
+    "Civil Rights Lawyer",
+    "Animal Rights Lawyer",
+    "Constitutional Lawyer",
+    "Contract Lawyer",
+    "Social Security Disability Lawyer",
+    "Elder Law Attorney",
+    "Medical Malpractice Lawyer",
+    "Education Lawyer",
+    "Admiralty (Maritime) Lawyer",
+    "Workers Compensation Lawyer",
+    "Human Rights Lawyer",
+    "Construction Lawyer",
+    "Mediation Lawyer",
+    "Litigation Lawyer",
+    "Paralegal"
+  ]
+}
