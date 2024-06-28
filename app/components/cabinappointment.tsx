@@ -10,8 +10,11 @@ import {
   FormLabel,
   Row,
 } from 'react-bootstrap';
+import lawyerList from '../json/lawyer.json'
 
 export const Cabinappointment = () => {
+
+    const lawyersArray = lawyerList?.lawyer;
   return (
     <Container className='my-6'>
     <Grid container>
@@ -33,7 +36,7 @@ export const Cabinappointment = () => {
         xs={12}
         className='flex justify-start items-start flex-wrap my-8'
       >
-        {lawyersArray?.map((type) => (
+        {/* {lawyersArray?.map((type) => (
           <Grid
             key={type?.id}
             item
@@ -52,7 +55,7 @@ export const Cabinappointment = () => {
               Consult Now
             </p>
           </Grid>
-        ))}
+        ))} */}
       </Grid>
     </Grid>
   </Container>
