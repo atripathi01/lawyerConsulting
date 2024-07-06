@@ -27,7 +27,7 @@ export const Cabinappointment = () => {
             Online consultations with verified lawyers in all experienced
           </p>
         </div>
-        <button className='py-1 px-2 bg-black cursor-pointer text-lg  text-white  '>
+        <button className='py-1 px-2 bg-[#060c19] cursor-pointer text-lg  text-white  '>
           View all lawyers
         </button>
       </Grid>

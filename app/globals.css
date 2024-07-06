@@ -13,12 +13,18 @@
     src: url(./fonts/avenir-webfont/avenir_roman_12.woff) format('woff');
   }
 
+@font-face {
+    font-family: Montserrat;
+    src: url(./fonts/Montserrat/Montserrat-VariableFont_wght.ttf) format('truetype');
+  }
+
 
 body {
   color: rgb(var(--foreground-rgb));
   font-family: Avenir Roman !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* font-family: Montserrat !important; */
   margin: 0;
   padding: 0;
   background: linear-gradient(
@@ -38,4 +44,11 @@ body {
 .no-outline:focus {
     outline: none;
     box-shadow: none;
+  }
+
+  .VideoConsulr{
+    background:  url("./image/Hero.jpg") no-repeat fixed center;
+    background-size: cover;
+    width: 100vw;
+    height: 75vh;
   }

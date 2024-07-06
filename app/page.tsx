@@ -57,7 +57,7 @@ export default function Home() {
         <TypeOfService />
       </div>
       {/* <Reviews /> */}
-      <Footer />
+ 
     </div>
   );
 }

@@ -11,6 +11,7 @@ import {
   Row,
 } from 'react-bootstrap';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import Link from 'next/link';
 const style = {
   position: 'absolute' as 'absolute',
   top: '50%',
@@ -99,9 +100,11 @@ const TypeOfService = () => {
               Online consultations with verified lawyers in all experienced
             </p>
           </div>
-          <button className='py-1 px-2 bg-black cursor-pointer text-lg  text-white  '>
+          <Link href={'/videoConsult'}>
+          <button className='py-1 px-2 bg-[#060c19] cursor-pointer text-lg  text-white  '>
             View all lawyers
           </button>
+          </Link>
         </Grid>
         <Grid
           item

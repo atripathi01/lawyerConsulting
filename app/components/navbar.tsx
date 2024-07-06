@@ -4,11 +4,11 @@ import {
   Container,
   Nav,
   NavDropdown,
-  NavLink,
   NavbarBrand,
   NavbarCollapse,
   NavbarText,
   NavbarToggle,
+  NavLink,
 } from 'react-bootstrap';
 import Navbar from 'react-bootstrap/Navbar';
 import BasicModal from './model';
@@ -17,6 +17,7 @@ import Register from './register';
 import LoginComponent from './login';
 import Image from 'next/image';
 import Verified from '../image/verified.jpg';
+import CompleteProfile from './completeProfile';
 
 const NavbarComponent = () => {
   const [open, setOpen] = useState(false);
@@ -24,7 +25,7 @@ const NavbarComponent = () => {
   const [userData, setUserData] = useState({});
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
+  const [openProfieComplpete, setOpenProfieComplpete] = useState(false);
   const getCookie = (name: string) => {
     const nameEQ = name + '=';
     const ca = document.cookie.split(';');
@@ -54,20 +55,44 @@ const NavbarComponent = () => {
     });
   };
 
+  const completeProfile = () => {
+    if (userData) {
+      return (
+        <BasicModal
+          handleClose={() => setOpenProfieComplpete(false)}
+          handleOpen={() => setOpenProfieComplpete(true)}
+          open={openProfieComplpete}
+        >
+          <CompleteProfile handleClose={() => setOpenProfieComplpete(false)} />
+        </BasicModal>
+      );
+    }
+  };
+
   const fetchUserData = () => {
     const name = getCookie('name');
     const email = getCookie('email');
     const isUserLogin = getCookie('isUserLogin');
+    const type = getCookie('type');
+    const isProfileIncomplete = getCookie('isProfileIncomplete');
 
     if (name && email) {
       console.log('name:', name);
       console.log('Email:', email);
       console.log('isUserLogin:', isUserLogin);
+      console.log('isProfileIncomplete:', isProfileIncomplete);
+      console.log('type', type);
       setUserData({
         name: name,
         email: email,
         isUserLogin: isUserLogin,
       });
+      if (type === 'client') {
+        // setIsNewUser(true);
+      }
+      if (isProfileIncomplete === 'false') {
+        setOpenProfieComplpete(true);
+      }
     } else {
       console.log('No data found in cookies');
     }
@@ -76,18 +101,18 @@ const NavbarComponent = () => {
     fetchUserData();
   }, []);
   return (
-    <Navbar className='' style={{ borderBottom: '1px solid #00000045' }}>
+    <Navbar className='' style={{ borderBottom: '1px solid #00000045', position:'sticky', top:"0", zIndex:"999", backgroundColor:"#fff" }}>
       <Container>
-        <NavbarBrand href='#home' className='fw-bold text-dark fs-3'>
+        <NavbarBrand href='/' className='fw-bold text-dark fs-3'>
           Law Consulting
         </NavbarBrand>
         <NavbarToggle />
         <NavbarCollapse className='justify-content-end'>
           <Nav className=''>
-            <NavLink href='#home' className='fw-bold text-dark'>
+            <NavLink href='/findLawyer' className='fw-bold text-dark'>
               Find Lawyer
             </NavLink>
-            <NavLink href='#link' className='fw-bold text-dark'>
+            <NavLink href='/videoConsult' className='fw-bold text-dark'>
               Video Consult
             </NavLink>
           </Nav>
@@ -122,6 +147,7 @@ const NavbarComponent = () => {
               </NavbarText>
             </Nav>
           )}
+          {completeProfile()}
           {/* @ts-ignore */}
           {!userData?.isUserLogin && (
             <NavbarText className='cursor-pointer'>

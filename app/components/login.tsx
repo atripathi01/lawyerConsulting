@@ -52,7 +52,7 @@ const LoginComponent = ({ handleClose,setIsNewUser,setUserData }: any) => {
               type='email'
               {...register('email', { required: true })}
             />
-            {errors.email && <span>This field is required</span>}
+            {errors.email && <span className='text-red-700'>Email field is required</span>}
           </Col>
         </FormGroup>
         <FormGroup as={Row} className='mb-3' controlId='formPlaintextEmail'>
@@ -65,7 +65,7 @@ const LoginComponent = ({ handleClose,setIsNewUser,setUserData }: any) => {
               type='password'
               {...register('password', { required: true })}
             />
-            {errors.password && <span>This field is required</span>}
+            {errors.password && <span className='text-red-700'>Password field is required</span>}
           </Col>
         </FormGroup>
         <button
