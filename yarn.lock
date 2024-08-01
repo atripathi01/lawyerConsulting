@@ -1035,6 +1035,11 @@ chokidar@^3.5.3:
   optionalDependencies:
     fsevents "~2.3.2"
 
+cities.json@^1.1.39:
+  version "1.1.39"
+  resolved "https://registry.yarnpkg.com/cities.json/-/cities.json-1.1.39.tgz#4a8643677607d0e9695b628d66ffccda905bbc27"
+  integrity sha512-UqLJzN7DJEeQBrIqEoVxFbqgtXkLdlT2ghIUq31i9aazmkLFK/4B1oVh5XaBQQQHBF8Pi725lqWMgCCzkH3kNw==
+
 classnames@^2.3.2:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.5.1.tgz#ba774c614be0f016da105c858e7159eae8e7687b"
